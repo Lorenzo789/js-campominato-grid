@@ -26,12 +26,18 @@ btnGameStart.addEventListener( 'click', function() {
         
         parentGrid.append(newSquare);
         
+        newSquare.addEventListener( 'click', function(){
+    
+            newSquare.classList.toggle('active');
+
+            console.log('hai cliccato il numero' , + index + 1);
+    
+        })
+
     }
 
-    let btnClick = stopClicking();
-    
+    let btnClick = stopClicking(btnGameStart);
 })
-
 
 
 // * FUNCTIONS * \\

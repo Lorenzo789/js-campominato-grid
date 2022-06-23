@@ -11,25 +11,42 @@
 
 const btnGameStart = document.getElementById('btn-grid-game')
 
-let count = 0;
 
 btnGameStart.addEventListener( 'click', function() {
     
     const parentGrid = document.getElementById("grid-game");
-
+    
     parentGrid.classList.add('grid-container')
-
-    for (let index = 1; index < 101; index++) {
-        
-        const newSquare = document.createElement('div');
-        
-        newSquare.classList.add('square');
     
-        newSquare.innerHTML = (index);
-    
+    for (let index = 0; index < 100; index++) {
+        
+        const newSquare = createNewSquare();
+        
+        newSquare.innerHTML = (index + 1);
+        
         parentGrid.append(newSquare);
-    
+        
     }
+
+    let btnClick = stopClicking();
+    
+})
+
+
+
+// * FUNCTIONS * \\
+function createNewSquare() {
+    const square = document.createElement('div');
+
+    square.classList.add('square');
+
+    return square;
+}
+
+
+function stopClicking () {
+
+    let count = 0;
 
     count++;
 
@@ -37,4 +54,6 @@ btnGameStart.addEventListener( 'click', function() {
 
         document.getElementById("btn-grid-game").disabled = true;
     }
-})
+
+    return count;
+}

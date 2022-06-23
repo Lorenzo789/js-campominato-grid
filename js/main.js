@@ -33,9 +33,8 @@ btnGameStart.addEventListener( 'click', function() {
 
     count++;
 
-    if (count > 1){
+    if (count > 0){
 
         document.getElementById("btn-grid-game").disabled = true;
-        console.log('max click');
     }
 })

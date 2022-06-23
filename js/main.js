@@ -11,6 +11,8 @@
 
 const btnGameStart = document.getElementById('btn-grid-game')
 
+let count = 0;
+
 btnGameStart.addEventListener( 'click', function() {
     
     const parentGrid = document.getElementById("grid-game");
@@ -29,4 +31,11 @@ btnGameStart.addEventListener( 'click', function() {
     
     }
 
+    count++;
+
+    if (count > 1){
+
+        document.getElementById("btn-grid-game").disabled = true;
+        console.log('max click');
+    }
 })

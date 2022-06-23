@@ -7,16 +7,26 @@
 //
 
 
-const parentGrid = document.getElementById('grid-container');
 
-for (let index = 1; index < 101; index++) {
+
+const btnGameStart = document.getElementById('btn-grid-game')
+
+btnGameStart.addEventListener( 'click', function() {
     
-    const newSquare = document.createElement('div');
+    const parentGrid = document.getElementById("grid-game");
+
+    parentGrid.classList.add('grid-container')
+
+    for (let index = 1; index < 101; index++) {
+        
+        const newSquare = document.createElement('div');
+        
+        newSquare.classList.add('square');
     
-    newSquare.classList.add('square');
+        newSquare.innerHTML = (index);
+    
+        parentGrid.append(newSquare);
+    
+    }
 
-    newSquare.innerHTML = (index);
-
-    parentGrid.append(newSquare);
-
-}
+})
